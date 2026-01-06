@@ -12,8 +12,12 @@ public class TransacaoService {
 
     private final Queue<Transacao> transacoes = new ConcurrentLinkedQueue<>();
 
-    public void receberService(TransacaoDTO dto){
+    public void receber(TransacaoDTO dto){
         Transacao transacao = new Transacao(dto.getValor(), dto.getDataHora());
         transacoes.add(transacao);
+    }
+
+    public void deletar(){
+        transacoes.clear();
     }
 }
