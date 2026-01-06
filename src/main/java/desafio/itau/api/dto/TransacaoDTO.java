@@ -1,5 +1,8 @@
-package desafio.itau.api.domain;
+package desafio.itau.api.dto;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,9 +13,15 @@ import java.time.OffsetDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter
 @Getter
-public class Transacao {
+@Setter
+public class TransacaoDTO {
+
+    @NotNull
+    @Min(0)
     private Double valor;
+
+    @NotNull
+    @Past
     private OffsetDateTime dataHora;
 }

@@ -13,7 +13,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.UNPROCESSABLE_CONTENT).build();
     }
 
-    @ExceptionHandler
+    @ExceptionHandler(ValorNulo.class)
     public ResponseEntity handleValorNulo(){
         return ResponseEntity.status(HttpStatus.UNPROCESSABLE_CONTENT).build();
     }
